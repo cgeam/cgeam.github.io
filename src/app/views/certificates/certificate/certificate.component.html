@@ -1,0 +1,37 @@
+<main *ngIf="!err; else notFound" class="certificate">
+
+  <div *ngIf="certificate$ | async as certificate; else loading">
+
+    <h1> CERTIFICADO VÁLIDO </h1>
+
+    <h2> {{ certificate?.evento }} </h2>
+
+    <p> Nome: {{ certificate?.nome }} </p>
+    <p> Data: {{ certificate?.data }} </p>
+
+  </div>
+
+</main>
+
+<ng-template #loading>
+
+  <div>
+
+    <p> carregando... </p>
+
+  </div>
+
+</ng-template>
+
+<ng-template #notFound>
+
+  <main>
+
+    <h1> CÓDIGO NÃO ENCONTRADO! </h1>
+
+    <p> O código de certificado solicitado não se encontra em nossa base de dados. </p>
+    <p> Verifique se o código está correto ou entre em contato conosco. </p>
+
+  </main>
+
+</ng-template>
