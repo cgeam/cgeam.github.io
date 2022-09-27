@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+.d-flex {
+  display: flex;
+  &\/column {
+    @extend .d-flex;
+    flex-direction: column;
+    &\/centred {
+      @extend .d-flex\/column, .d-flex\/centred;
+      &\/auto { @extend .d-flex\/column\/centred, .d-flex\/auto; }
+    }
+    &\/auto { @extend .d-flex\/column, .d-flex\/auto; }
+  }
+  &\/centred {
+    @extend .d-flex;
+    align-items: center;
+    justify-content: center;
+    &\/auto { @extend .d-flex\/centred, .d-flex\/auto; }
+  }
+  &\/auto {
+    @extend .d-flex;
+    flex: 1 1 auto;
+  }
+}
+
+.mat-ico {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}

@@ -1,4 +1,19 @@
-<label for="code"> digite um código do seu certificado: </label>
+<main class="certificates d-flex/column/centred">
+
+  <h1> Insira aqui o código do seu certificado </h1>
+
+  <div class="input-box">
+    <input type="text" placeholder="2022XXXXXSGTO" [(ngModel)]="value" class="input">
+    <button (click)="onSubmit()" type="submit">
+      <i class="mat-ico"> search </i>
+    </button>
+  </div>
+
+  <p> Seu código é formado por 13 digitos e pode ser encontrado impresso em seu certificado. </p>
+
+</main>
+
+<!-- <label for="code"> digite um código do seu certificado: </label>
 <input type="text" placeholder="2022XXXXSGTO" [(ngModel)]="value" id="code">
 
-<button (click)="onSubmit()" type="submit"> Validar Certificado </button>
+<button (click)="onSubmit()" type="submit"> Validar Certificado </button> -->

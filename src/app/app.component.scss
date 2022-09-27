@@ -1,0 +1,30 @@
+@use 'src/styles' as base;
+@use '@angular/material' as mat;
+.toolbar {
+  padding: 0 calc((100vw - 1366px)/2);
+  @media screen and (max-width: 720px) {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  button {
+    &.font-ajust { font-size: 1.125rem; }
+
+    .github {
+      fill: mat.get-color-from-palette(base.$my-palette, '700-contrast');
+      width: 1.5rem;
+    }
+  }
+}
+
+.view {
+  width: 1366px;
+  box-sizing: border-box;
+  padding: 0 calc((100vw - 1366px)/2);
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+}

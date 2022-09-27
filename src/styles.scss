@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './styles/template.config.scss';
+@include mat.core();
+
+* {
+  margin: 0; padding: 0;
+  font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$my-palette: mat.define-palette((
+  50: #e5e7ee,100: #bcc2d6,200: #929bba,300: #69769e,400: #4b5a8c,500: #2c407b,600: #263973,700: #1e3168,800: #17285c,900: #0c1845,
+  contrast: ( 50: #0c1845, 100: #0c1845, 200: #0c1845, 300: #0c1845, 400: #0c1845, 500: #e5e7ee, 600: #e5e7ee, 700: #e5e7ee, 800: #e5e7ee, 900: #e5e7ee )
+), 700, 500, 900, 50 );
+
+$auth-certificates-accent: mat.define-palette(mat.$gray-palette);
+$auth-certificates-warn: mat.define-palette(mat.$red-palette);
+
+$my-config: mat.define-typography-config(
+  $font-family: ('Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif)
+);
+
+$auth-certificates-theme: mat.define-light-theme((
+  color: (
+    primary: $my-palette,
+    accent: $auth-certificates-accent,
+    warn: $auth-certificates-warn,
+  ),
+  typography: $my-config
+));
+
+@include mat.all-component-themes($auth-certificates-theme);
+
+/* Angular Material Components */
+
+.mat-toolbar, .mat-toolbar-row, .mat-toolbar-single-row {
+  height: auto;
+}
+
+.mat-button {
+  padding: .25rem .5rem;
+}
